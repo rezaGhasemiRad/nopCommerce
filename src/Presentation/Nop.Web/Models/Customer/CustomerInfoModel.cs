@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Nop.Web.Framework.Mvc.ModelBinding;
 using Nop.Web.Framework.Models;
+using System.Globalization;
 
 namespace Nop.Web.Models.Customer
 {
@@ -62,7 +63,7 @@ namespace Nop.Web.Models.Customer
             DateTime? dateOfBirth = null;
             try
             {
-                dateOfBirth = new DateTime(DateOfBirthYear.Value, DateOfBirthMonth.Value, DateOfBirthDay.Value);
+                dateOfBirth = new DateTime(DateOfBirthYear.Value, DateOfBirthMonth.Value, DateOfBirthDay.Value, CultureInfo.CurrentCulture.Calendar);
             }
             catch { }
             return dateOfBirth;

@@ -198,10 +198,10 @@ namespace Nop.Web.Framework.TagHelpers.Shared
 
             years.AppendFormat("<option value='{0}'>{1}</option>", "0", await _localizationService.GetResourceAsync("Common.Year"));
 
-            if (BeginYear == null)
-                BeginYear = DateTime.UtcNow.Year - 100;
-            if (EndYear == null)
-                EndYear = DateTime.UtcNow.Year;
+            var currentCalendar = CultureInfo.CurrentCulture.Calendar;
+            
+            BeginYear ??= currentCalendar.GetYear(DateTime.UtcNow) - 100;
+            EndYear ??= currentCalendar.GetYear(DateTime.UtcNow);
 
             if (EndYear > BeginYear)
             {

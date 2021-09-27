@@ -134,14 +134,15 @@
                             break;
                         case AttributeControlType.Datepicker:
                             {
+                                var currentCalendar = CultureInfo.CurrentCulture.Calendar;
                                 <nop-date-picker asp-day-name="@(controlId + "_day")"
-                                                 asp-month-name="@(controlId + "_month")"
-                                                 asp-year-name="@(controlId + "_year")"
-                                                 asp-begin-year="@(DateTime.Now.Year)"
-                                                 asp-end-year="@(DateTime.Now.Year + catalogSettings.CountDisplayedYearsDatePicker)"
-                                                 asp-selected-day="@(attribute.SelectedDay)"
-                                                 asp-selected-month="@(attribute.SelectedMonth)"
-                                                 asp-selected-year="@(attribute.SelectedYear)" />
+                                                asp-month-name="@(controlId + "_month")"
+                                                asp-year-name="@(controlId + "_year")"
+                                                asp-begin-year="@(currentCalendar.GetYear(DateTime.UtcNow))"
+                                                asp-end-year="@(currentCalendar.GetYear(DateTime.UtcNow) + catalogSettings.CountDisplayedYearsDatePicker)"
+                                                asp-selected-day="@(attribute.SelectedDay)"
+                                                asp-selected-month="@(attribute.SelectedMonth)"
+                                                asp-selected-year="@(attribute.SelectedYear)" />
                             }
                             break;
                         case AttributeControlType.FileUpload:
