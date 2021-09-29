@@ -26,6 +26,7 @@ using Nop.Services.Authentication.External;
 using Nop.Services.Common;
 using Nop.Services.Security;
 using Nop.Web.Framework.Mvc.ModelBinding;
+using Nop.Web.Framework.Mvc.ModelBinding.Binders;
 using Nop.Web.Framework.Mvc.Routing;
 using Nop.Web.Framework.Security.Captcha;
 using Nop.Web.Framework.Themes;
@@ -292,6 +293,7 @@ namespace Nop.Web.Framework.Infrastructure.Extensions
             //set some options
             mvcBuilder.AddMvcOptions(options =>
             {
+                options.ModelBinderProviders.Insert(0, new InvariantFloatingPointModelBinderProvider());
                 //add custom display metadata provider
                 options.ModelMetadataDetailsProviders.Add(new NopMetadataProvider());
 
