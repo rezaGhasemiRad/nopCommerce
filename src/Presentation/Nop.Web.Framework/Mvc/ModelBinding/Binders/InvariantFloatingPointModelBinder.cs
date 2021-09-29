@@ -7,6 +7,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Nop.Web.Framework.Mvc.ModelBinding.Binders
 {
+    /// <summary>
+    /// Represents model binder for floating-point types
+    /// </summary>
     public class InvariantFloatingPointModelBinder : IModelBinder
     {
 
@@ -41,6 +44,13 @@ namespace Nop.Web.Framework.Mvc.ModelBinding.Binders
         }
 
         #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Attempts to bind a model
+        /// </summary>
+        /// <param name="bindingContext">Model binding context</param>
         public Task BindModelAsync(ModelBindingContext bindingContext)
         {
             if (bindingContext is null)
@@ -79,5 +89,7 @@ namespace Nop.Web.Framework.Mvc.ModelBinding.Binders
             bindingContext.Result = ModelBindingResult.Success(model);
             return Task.CompletedTask;
         }
+
+        #endregion
     }
 }
