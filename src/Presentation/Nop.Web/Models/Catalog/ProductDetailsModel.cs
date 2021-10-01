@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Nop.Core.Domain.Catalog;
 using Nop.Core.Domain.Orders;
@@ -286,6 +287,20 @@ namespace Nop.Web.Models.Catalog
             public AttributeControlType AttributeControlType { get; set; }
 
             public IList<ProductAttributeValueModel> Values { get; set; }
+
+            public DateTime? ParseSelectedDate()
+            {
+                if (!SelectedDay.HasValue || !SelectedMonth.HasValue || !SelectedYear.HasValue)
+                    return null;
+
+                DateTime? dateOfBirth = null;
+                try
+                {
+                    dateOfBirth = new DateTime(SelectedYear.Value, SelectedMonth.Value, SelectedDay.Value, CultureInfo.CurrentCulture.Calendar);
+                }
+                catch { }
+                return dateOfBirth;
+            }
         }
 
         public partial record ProductAttributeValueModel : BaseNopEntityModel
