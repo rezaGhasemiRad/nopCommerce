@@ -1,0 +1,9 @@
+@{
+    Layout = "";
+    Html.AddCssFileParts("~/Plugins/ExternalAuth.Yahoo/Content/yahoostyles.css");    
+}
+<div class="facebook-login-block">
+    <div class="buttons">
+        <a asp-controller="YahooAuthentication" asp-action="login" asp-route-returnurl="@Context.Request.Query["ReturnUrl"]" class="yahoo-btn"></a>
+    </div>
+</div>

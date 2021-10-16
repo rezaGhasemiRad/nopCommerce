@@ -1,0 +1,11 @@
+﻿{
+  "Group": "ExternalAuth methods",
+  "FriendlyName": "Yahoo authentication",
+  "SystemName": "ExternalAuth.Yahoo",
+  "Version": "1.0",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "nopCommerce team",
+  "DisplayOrder": 5,
+  "FileName": "Nop.Plugin.ExternalAuth.Yahoo.dll",
+  "Description": "This plugin enables Yahoo authentication (login using Yahoo account)"
+}
