@@ -75,7 +75,7 @@ namespace Nop.Plugin.ExternalAuth.Yahoo
                     "<p>To configure authentication with Yahoo, please follow these steps:<br/><br/><ol>" +
                     "<li>Navigate to the <a href=\"https://developer.yahoo.com/apps/\" target =\"_blank\" > Yahoo for Developers</a> page and sign in. If you don't already have a Yahoo account, use the <b>Create an account</b> link on the login page to create one.</li>" +
                     "<li>Tap the <b>Create an App</b> in the upper right corner to create a new App ID. " +
-                    "<li>Enter \"{0:s}signin-yahoo\" into the <b>Redirect URI(s)</b> field.</li>" +
+                    "<li>Enter \"{0:s}YahooAuthentication/LoginCallback\" into the <b>Redirect URI(s)</b> field.</li>" +
                     "<li>Click on the <b>Create App</b>.</li>" +
                     "</li><li>You are now presented your apps information" +
                     "</li><li>Copy your Client ID and Client Secret below.</li></ol><br/><br/></p>"
