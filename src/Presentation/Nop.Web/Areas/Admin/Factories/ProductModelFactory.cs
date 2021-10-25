@@ -2377,7 +2377,7 @@ namespace Nop.Web.Areas.Admin.Factories
                     ProductAttributeId = attribute.ProductAttributeId,
                     Name = (await _productAttributeService.GetProductAttributeByIdAsync(attribute.ProductAttributeId)).Name,
                     TextPrompt = attribute.TextPrompt,
-                    IsRequired = attribute.IsRequired,
+                    IsRequired = false,//No need to show any required attributes!
                     AttributeControlType = attribute.AttributeControlType
                 };
 
